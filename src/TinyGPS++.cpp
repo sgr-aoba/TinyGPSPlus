@@ -32,6 +32,23 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define _GNRMCterm   "GNRMC"
 #define _GNGGAterm   "GNGGA"
 
+// Added for SeeedJP_STM32F4
+#include <math.h>
+#define TWO_PI 6.2831855
+
+double radians(double degrees) {
+  return (degrees * 71) / 4068;
+}
+
+double degrees(double radians) {
+  return radians * 57296 / 1000;
+}
+
+double sq(double n) {
+  return n*n;
+}
+// SeeedJP_STM32F4
+
 TinyGPSPlus::TinyGPSPlus()
   :  parity(0)
   ,  isChecksumTerm(false)
